@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    <title>National Parks Memory Game</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,400,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+
+<body>
+
+<div id="modal">
+    <div class="modal-content">
+        <div class="modal-header">CONGRATULATIONS, YOU WON!
+            <span class="exit-btn">&times;</span>
+        </div>
+        <div class="modal-body">
+        <img src="images/sunset_m_2.jpg" class="modal-bg" alt="sunset over the badlands">
+        </div>
+        <div class="modal-footer">
+            <div id="win-text">
+            YOU FINISHED THE GAME IN (TIME) AND RECEIVED (NUMER) STARS!
+            </div>
+            <button id="play-again-btn" type="button" onclick="newGame();">PLAY AGAIN</button>
+        </div>
+    </div>
+</div>
+
+<div id="title">        
+    <header><span class="bigger">N</span>ATIONAL PARK<span class="bigger">S</span>
+    <div class="line"></div>
+    <div class="subhead">MEMORY GAME</div>
+    </header>
+</div>
+
+<div id="stat-box">
+    <!-- TREE ICONS FROM FONTAWSOME.COM -->
+    <div id="trees">
+        <i class="fas fa-tree"></i>
+        <i class="fas fa-tree"></i>
+        <i class="fas fa-tree"></i>
+    </div>
+    
+    <div id="moves-box">
+        MOVES
+        <div id="moves">0</div>
+    </div>
+
+    <div id="time-box">
+        TIMER
+        <div id="timer">
+        <time>00:00</time>
+        </div>
+    </div>
+
+    <div id="reset-game">
+        <i class="fas fa-redo-alt" onclick="newGame();" title="Reset Game"></i>
+    </div>
+
+</div>
+
+<div id="game-board">
+    <div class="card" data-card="arches">
+        <div class="front"></div>
+        <div class="park-name"><p>ARCHES</p></div>
+        <div class="back">
+        <img src="images/arches_o.jpg" class="bg-img">
+        </div>
+    </div>
+    <div class="card" data-card="arches">
+        <div class="front"></div>
+        <div class="park-name"><p>ARCHES</p></div>
+        <div class="back">
+            <img src="images/arches_o.jpg" class="bg-img">
+        </div>
+     </div>
+    <div class="card" data-card="canyonlands">
+        <div class="front"></div>
+        <div class="park-name"><p>CANYON<br>LANDS</p></div>
+        <div class="back">
+        <img src="images/canyonlands_o.jpg" class="bg-img">
+        </div>
+    </div>
+    <div class="card" data-card="canyonlands">
+        <div class="front"></div>
+        <div class="park-name"><p>CANYON<br>LANDS</p></div>
+        <div class="back">
+        <img src="images/canyonlands_o.jpg" class="bg-img">
+        </div>
+    </div>
+    <div class="card" data-card="bryce">
+        <div class="front"></div>
+        <div class="park-name"><p>BRYCE CANYON</p></div>
+        <div class="back">
+        <img src="images/bryce_o.JPG" class="bg-img">
+        </div>
+    </div>
+    <div class="card" data-card="bryce">
+        <div class="front"></div>
+        <div class="park-name"><p>BRYCE CANYON</p></div>
+        <div class="back">
+        <img src="images/bryce_o.jpg" alt="Glacier" class="bg-img">
+        </div>
+    </div>
+    <div class="card" data-card="glacier">
+        <div class="front"></div>
+        <div class="park-name"><p>GLACIER</p></div>
+        <div class="back">
+        <img src="images/glacier_o.jpg" alt="Glacier" class="bg-img">
+        </div>
+    </div>
+    <div class="card" data-card="glacier">
+        <div class="front"></div>
+        <div class="park-name"><p>GLACIER</p></div>
+        <div class="back">
+        <img src="images/glacier_o.jpg" alt="Glacier" class="bg-img">
+        </div>
+    </div>
+    <div class="card" data-card="badlands">
+        <div class="front"></div>
+        <div class="park-name"><p>BADLANDS</p></div>
+        <div class="back">
+        <img src="images/badlands_o.JPG" alt="Badlands" class="bg-img">
+        </div>
+    </div>
+    <div class="card" data-card="badlands">
+        <div class="front"></div>
+        <div class="park-name"><p>BADLANDS</p></div>
+        <div class="back">
+        <img src="images/badlands_o.JPG" alt="Badlands" class="bg-img">
+        </div>
+    </div>
+    <div class="card" data-card="yosemite">
+        <div class="front"></div>
+        <div class="park-name"><p>YOSEMITE</p></div>
+        <div class="back">
+        <img src="images/yosemite_o.JPG" alt="Yosemite" class="bg-img">
+        </div>
+    </div>
+    <div class="card" data-card="yosemite">
+        <div class="front"></div>
+        <div class="park-name"><p>YOSEMITE</p></div>
+        <div class="back">
+        <img src="images/yosemite_o.JPG" alt="Yosemite" class="bg-img">
+        </div>
+    </div>
+    <div class="card" data-card="dunes">
+        <div class="front"></div>
+        <div class="park-name"><p>GREAT SAND DUNES</p></div>
+        <div class="back">
+        <img src="images/great_sand_dunes_e.JPG" alt="Great Sand Dunes" class="bg-img">
+        </div>
+    </div>
+    <div class="card" data-card="dunes">
+        <div class="front"></div>
+        <div class="park-name"><p>GREAT SAND DUNES</p></div>
+        <div class="back">
+        <img src="images/great_sand_dunes_e.JPG" alt="Great Sand Dunes" class="bg-img">
+        </div>
+    </div>
+    <div class="card" data-card="crater-lake">
+        <div class="front"></div>
+        <div class="park-name"><p>CRATER LAKE</p></div>
+        <div class="back">
+        <img src="images/crater_lake_o.JPG" alt="Crater Lake" class="bg-img">
+        </div>
+    </div>
+    <div class="card" data-card="crater-lake">
+        <div class="front"></div>
+        <div class="park-name"><p>CRATER LAKE</p></div>
+        <div class="back">
+        <img src="images/crater_lake_o.JPG" alt="Crater Lake" class="bg-img">
+        </div>
+    </div>
+</div>
+
+<div class="made-by">CODED BY <a href="https://linkedin.com/in/matt-dahlseid" target="_blank">MATT DAHLSEID</a></div>
+
+<script src="js/design.js"></script>
+</body>
+</html>

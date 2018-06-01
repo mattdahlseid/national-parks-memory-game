@@ -1,0 +1,371 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #d8dfd0;
+}
+
+a {
+    text-decoration: none;
+    color: #20b2aa;
+}
+
+a:hover {
+    color: #008b8b;
+}
+
+#title {
+    height: 110px;
+    width: 820px;
+    font-size: 40px;
+    line-height: 40px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    letter-spacing: 4px;
+    padding: 14px 0;
+    text-align: center;
+    margin: 20px auto 0 auto;
+    background-color: #1f404567;
+    border-top: 4px solid #000;
+    border-right: 4px solid #000;
+    border-left: 4px solid #000;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 2px 4px 8px #808080;
+}
+
+.bigger {
+    font-size: 45px;
+}
+
+.subhead {
+    font-size: 20px;
+    color: #fff;
+    margin: 0 auto;
+}
+
+/* STYLING FOR HEADER BOX */
+#stat-box {
+    width: 820px;
+    height: 60px;
+    background-color: #000;
+    margin: 0 auto;
+    padding: 8px 10px 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    transform: all 0.5s ease;
+    box-shadow: 2px 4px 8px #808080;
+    z-index: -1;
+}
+
+#trees {
+    width: 25%;
+    height: 40px;
+    padding: 8px 0 0 20px;
+    text-align: center;
+    color: #278a27;
+    font-size: 24px;
+    letter-spacing: 5px;
+}
+
+#moves-box {
+    width: 25%;
+    height: 50px;
+    letter-spacing: 3px;
+    color: #fff;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    text-align: center;
+}
+
+#moves {
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    padding-top: 3px;
+}
+
+#time-box {
+    width: 25%;
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: 3px;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+}
+
+#timer {
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    padding-top: 3px;
+}
+
+#reset-game {
+    width: 25%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.fa-redo-alt {
+    padding: 6px 20px 6px 20px;
+    color: #fff;
+    font-size: 30px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+@keyframes reset {
+    0% {transform: rotate(0deg);}
+    50% {color: #278a27; font-size: 35px;}
+    100% {transform: rotate(360deg);}
+}
+
+.fa-redo-alt:hover {
+    animation-name: reset;
+    animation-duration: 0.5s;
+}
+
+#game-board {
+    width: 820px;
+    height: 600px;
+    border-right: 5px solid black;
+    border-bottom: 5px solid black;
+    border-left: 5px solid black;
+    margin: 0 auto 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 10px 15px 10px;
+    position: relative;
+    background-color: #fff;
+    box-shadow: 2px 4px 8px #808080;
+    border-radius: 0 0 10px 10px;
+    transform: all 0.5s ease;
+    z-index: 0;
+}
+
+.made-by {
+    font-size: 15px; 
+    letter-spacing: 3px;
+    font-family: 'Raleway', sans-serif;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+/* CARD AND CARD ANIMATION STYLING */
+.card {
+    width: calc((100% - 80px) / 4);
+    height: 120px;
+    margin: 10px auto;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+@keyframes park-name {
+    0% {opacity: 0; transform: translateY(0px);}
+    20% {opacity: 1;}
+    90% {opacity: 1; }
+    100% {opacity: 0; transform: translateY(-10px);}
+}
+
+.park-name {
+    width: 100%;
+    height: 120%;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    z-index: 1;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 3px;
+    word-wrap: break-word;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+    visibility: hidden;
+    display: table;
+}
+
+.park-name p {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 0;
+    animation-name: park-name;
+    animation-duration: 2s;
+}
+
+.front {
+    width: 100%;
+    height: 100%;
+    background-color: lightseagreen;
+}
+
+@keyframes match {
+    10% {box-shadow: -1px 1px 5px 3px #ffff00; transform: translateY(-2px)}
+    25% {box-shadow: -1px 1px 5px 3px #ffff00;}
+}
+
+.match {
+    animation-name: match;
+    animation-duration: 1s;
+}
+
+@keyframes not-match {
+    10% {box-shadow: -1px 1px 5px 3px #ff0000; transform: translateX(-2px)}
+    25% {box-shadow: -1px 1px 5px 3px #ff0000; transform: translateX(2px)}
+}
+
+.not-match {
+    animation-name: not-match;
+    animation-duration: 1s;
+}
+
+.clear {
+    display: none;
+}
+
+.bg-img {
+    object-fit: cover;
+    background-position: center; 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+/* MODAL STYLING */
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background-color: lightsteelblue;
+    margin: 5% auto;
+    width: 450px;
+    height: 410px;
+    box-shadow: 8px 5px 20px rgba(0,0,0,0.8), -8px 5px 20px 4px rgba(0,0,0,0.8);
+    display: flex;
+    flex-wrap: wrap;
+    border: 4px solid white;
+}
+
+.modal-header {
+    width: 100%;
+    height: 50px;
+    background-color: coral;
+    padding: 12px 12px 0 12px;
+    border-bottom: 4px solid #792a0b;
+    font-size: 21px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    z-index: 1;
+}
+
+.exit-btn {
+    text-align: right;
+    float: right;
+    font-size: 30px;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    margin-top: -5px;
+    cursor: pointer;
+}
+
+.modal-body {
+    width: 100%;
+}
+
+.modal-bg {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+}
+
+.modal-footer {
+    width: 100%;
+    height: 110px;
+    background-color: black;
+    margin: -62px 0 0 0;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
+}
+
+#win-text {
+    color: white;
+    font-size: 14px;
+    letter-spacing: 2px;
+    line-height: 22px;
+    padding: 5px 40px;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+#play-again-btn {
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 2px;
+    width: 140px;
+    height: 30px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    margin: 5px auto;
+    left: 0; 
+    right: 0;
+    position: absolute;
+}
+
+#play-again-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1100px) {
+    #title {width: 85%; height: 100px; font-size: 40px; padding: 10px 0;}
+    #game-board {width: 85%;}
+    #stat-box {width: 85%;}
+}
+
+@media screen and (max-width: 720px) {
+    .modal-content {width: 380px;}
+    .modal-header {font-size: 17px;}
+    #win-text {font-size: 13px;}
+    #game-board {width: 90%; height: 400px;}
+    #stat-box {width: 90%;}
+    #title {width: 90%; height: 90px; font-size: 32px; line-height: 32px; padding: 8px 0;}
+    .bigger {font-size: 35px;}
+    .park-name {font-size: 12px;}
+    .card{width: calc((100% - 40px) / 4); height: 70px;}
+}
+
+@media screen and (max-width: 470px) {
+    .modal-content {width: 300px;}
+    .modal-header {font-size: 12px; padding-top: 16px;}
+    .exit-btn {font-size: 22px; margin-top: -5px;}
+    #win-text {padding: 7px; font-size: 12px;}
+    #play-again-btn {margin: 3px auto 0 auto;}
+    #game-board {width: 96%; height: 380px; padding: 10px 5px 10px 5px;}
+    #stat-box {width: 96%; padding: 8px 4px 0 4px;}
+    .fa-redo-alt {font-size: 24px; padding: 10px 20px 6px 20px;}
+    #trees {text-align: left; font-size: 20px; letter-spacing: 0;}
+    #title {width: 96%; height: 80px; font-size: 30px; line-height: 30px; padding: 8px 0;}
+    .bigger {font-size: 33px;}
+    #moves-box, #time-box {font-size: 14px; padding-top: 5px;}
+    .card {width: calc((100% - 20px) / 4); height: 70px; margin: 5px auto;}
+    .park-name {display: none;}
+}
