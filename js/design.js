@@ -29,17 +29,19 @@ function newGame() {
     location.reload();
 }
 
-// Shuffle deck
-for (let i = 0; i < deck.children.length; i++) {
-    array.push(deck.children[i]);
+// shuffle deck using Fisher-Yates Modern Shuffle Algorithm
+let deckArray = Array.from(deck.children);
+let i = deckArray.length, j, temp;
+while(--i > 0) {
+    j = Math.floor(Math.random() * (i+1));
+    temp = deckArray[j];
+    deckArray[j] = deckArray[i];
+    deckArray[i] = temp;
 }
-// randomly sorts array
-array.sort(function() {
-    return Math.random() - 0.5;
-})
-// returns shuffled children to array
-for (let i = 0; i < array.length; i++) {
-    deck.appendChild(array[i])
+
+// returns shuffled array to deck
+for (let i = 0; i < deckArray.length; i++) {
+    deck.appendChild(deckArray[i])
 }
 
 // timer functions
