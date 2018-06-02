@@ -42,15 +42,16 @@ for (let i = 0; i < array.length; i++) {
     deck.appendChild(array[i])
 }
 
-// timer function
+// timer functions
 function addTime() {
     seconds++;
+    // restarts seconds and adds a minute when seconds <= 60
     if (seconds >= 60) {
         seconds = 0;
         minutes++;
     }
-    timeId.innerText = (minutes ? (minutes > 9 ? minutes : '0' + minutes) : '00') + ':' + (seconds > 9 ? seconds : '0' + seconds)
-    ;
+    // adds a 0 before seconds when seconds is below 10
+    timeId.innerText = minutes + ":" + (seconds > 9 ? seconds : '0' + seconds);
     timer();
 }
 
@@ -59,7 +60,7 @@ function timer() {
     if (matches.length == 16) {
         return;
     } else {
-    t = setTimeout(addTime, 1000)
+    setTimeout(addTime, 1000)
     }
 }
 
