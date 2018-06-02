@@ -1,5 +1,5 @@
 # National Parks Memory Game
-<a href="https://mattdahlseid.github.io/national-parks-memory-game/" target="_blank">Click here to play the game</a>
+[Click here to play the game](https://mattdahlseid.github.io/national-parks-memory-game/)
 
 ## Introduction
 This project was created to fulfill a requirement for Udacity's Front-End Development Nanodegree program. I declined to use the starter code provided by Udacity and opted to build the project from scratch. 
@@ -27,4 +27,6 @@ I gained direction for creating this game through watching a Udacity webinar by 
 
 I found [this Traversy Media video](https://www.youtube.com/watch?v=6ophW7Ask_0) useful when building my "congratulations" modal.
 
-This [stackoverflow thread](https://stackoverflow.com/questions/34059401/randomly-shuffle-existing-document-fragment-before-appending-to-dom-with-javascr) was helpful in understanding how to shuffle elements in a NodeList. And this [codepad link](https://codepad.co/snippet/YMYUDYgr) gave me an understanding of how to create a timer function. 
+To shuffle the deck, I used the [Fisher-Yates Shuffle Algorithm](https://bost.ocks.org/mike/shuffle/). It's a widely-used algorithm to get a randomly shuffled array/data set. This [YouTube walkthrough](https://www.youtube.com/watch?v=tLxBwSL3lPQ&feature=youtu.be) by Adam Khoury introduced me to it. 
+
+And this [codepad link](https://codepad.co/snippet/YMYUDYgr) gave me a better understanding of how to create a timer function.
