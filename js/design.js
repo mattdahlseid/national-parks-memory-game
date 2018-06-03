@@ -4,7 +4,7 @@ let deck = document.querySelector('#game-board'),
     shownCards = [],
     array = [],
     timeId = document.getElementById('timer'),
-    seconds = 0, minutes = 0, t;
+    seconds = 0, minutes = 0;
 
 const modal = document.getElementById('modal'),
     extBtn = document.getElementsByClassName('exit-btn')[0],
@@ -41,7 +41,7 @@ while(--i > 0) {
 
 // returns shuffled array to deck
 for (let i = 0; i < deckArray.length; i++) {
-    deck.appendChild(deckArray[i])
+   deck.appendChild(deckArray[i])
 }
 
 // timer functions
@@ -66,7 +66,7 @@ function timer() {
     }
 }
 
-cards.forEach(function(card) {
+deckArray.forEach(function(card) {
     moves = 0;
     // adds to move count 
     function addMoves() {
@@ -75,21 +75,23 @@ cards.forEach(function(card) {
         if (card.classList.contains('match') == false) {
             document.getElementById('moves').innerText = moreMoves;
         }
-        // initiates timer on first card click
-        if (moreMoves == 1) {
-            timer();
-        }
         // remove tree icons after a certain amount of moves
-        if (moreMoves == 28) {
+        if (moreMoves == 13) {
             document.getElementById('trees').lastChild.previousSibling.classList.remove('fa-tree')
-        } else if (moreMoves == 35) {
+        } else if (moreMoves == 18) {
             document.getElementById('trees').firstChild.nextSibling.classList.remove('fa-tree')
         }
     }
 
+    count = 0;
     card.addEventListener('click', function(e) {
-        // prevents classes being added/removed on matched cards 
-        if (card.classList.contains('match') == true) {
+        // starts timer on first click
+        let addCount = count += 1;
+        if (addCount === 1) {
+            timer();
+        }
+        // prevents classes being added/removed on matched cards or face-up cards
+        if (card.classList.contains('match') == true || card.firstChild.nextSibling.classList.contains('clear')) {
             return;
             } else 
         // adds shown cards to shownCards array when clicked
@@ -97,11 +99,11 @@ cards.forEach(function(card) {
         // shows cards
         card.firstChild.nextSibling.classList.add('clear')
         // keep track of click count
-        addMoves();
 
-        // determines what to do if cards match/don't match
+        // determines what to do if cards match or don't match
         if (shownCards.length == 2) {
-        
+            addMoves();
+
             setTimeout(function() {
                 // clicked card variables for each turn
                 let cardOne = shownCards[0];
@@ -148,10 +150,12 @@ function win() {
    if (matches.length == 16) {
         // pulls final time to display in modal
         let finalTime = document.getElementById('timer').innerHTML;
+        // pulls final moves to display in modal
+        let finalMoves = document.getElementById('moves').innerHTML;
         // pulls tree total to display in modal
         let finalTrees = document.getElementById('trees').innerHTML;
         // message to display in modal
-        document.getElementById('win-text').innerHTML = "YOUR FINAL TIME WAS " + finalTime + "<br>" + "YOU EARNED" + finalTrees + " OUT OF 3 TREES";
+        document.getElementById('win-text').innerHTML = "<strong>TIME</strong>: " + finalTime + " | " + "<strong>MOVES</strong>: " + finalMoves + "<br>" + "<strong>SCORE</strong>:  " + finalTrees + " OUT OF 3 TREES";
         // opens modal after final match animation
         winDelay = setTimeout(function openModal() {
             modal.style.display = 'block';
