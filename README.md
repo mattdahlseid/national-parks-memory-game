@@ -20,7 +20,7 @@ This project was created with:
 * CSS 
 * Vanilla JavaScript
 * Google Fonts ([Raleway](https://fonts.google.com/specimen/Raleway))
-* Font Awesome ([tree icon](https://fontawesome.com/icons/tree?style=solid))
+* Font Awesome ([tree icon](https://fontawesome.com/icons/tree?style=solid), [redo-alt icon](https://fontawesome.com/icons/redo-alt?style=solid))
 
 ## Acknowledgements
 I utilized multiple resources to help me better understand how to construct various elements of this project.
