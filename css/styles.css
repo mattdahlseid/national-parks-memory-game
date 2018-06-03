@@ -9,11 +9,12 @@ body {
 
 a {
     text-decoration: none;
-    color: #20b2aa;
+    color: #ff7f50;
+    transition: all 0.25s ease;
 }
 
 a:hover {
-    color: #008b8b;
+    color: #792a0b;
 }
 
 #title {
@@ -27,10 +28,11 @@ a:hover {
     padding: 14px 0;
     text-align: center;
     margin: 20px auto 0 auto;
-    background-color: #1f404567;
+    background-color: #ff7f50;
     border-top: 4px solid #000;
     border-right: 4px solid #000;
     border-left: 4px solid #000;
+    border-bottom: 6px solid #792a0b;
     border-radius: 10px 10px 0 0;
     box-shadow: 2px 4px 8px #808080;
 }
@@ -48,7 +50,7 @@ a:hover {
 /* STYLING FOR HEADER BOX */
 #stat-box {
     width: 820px;
-    height: 60px;
+    height: 58px;
     background-color: #000;
     margin: 0 auto;
     padding: 8px 10px 0 10px;
@@ -267,7 +269,7 @@ a:hover {
 .modal-header {
     width: 100%;
     height: 50px;
-    background-color: coral;
+    background-color: #ff7f50;
     padding: 12px 12px 0 12px;
     border-bottom: 4px solid #792a0b;
     font-size: 21px;
@@ -350,6 +352,7 @@ a:hover {
     #title {width: 90%; height: 90px; font-size: 32px; line-height: 32px; padding: 8px 0;}
     .bigger {font-size: 35px;}
     .park-name {font-size: 12px;}
+    #trees {letter-spacing: 2px;}
     .card{width: calc((100% - 40px) / 4); height: 70px;}
 }
 
@@ -363,8 +366,8 @@ a:hover {
     #stat-box {width: 96%; padding: 8px 4px 0 4px;}
     .fa-redo-alt {font-size: 24px; padding: 10px 20px 6px 20px;}
     #trees {text-align: left; font-size: 20px; letter-spacing: 0;}
-    #title {width: 96%; height: 80px; font-size: 30px; line-height: 30px; padding: 8px 0;}
-    .bigger {font-size: 33px;}
+    #title {width: 96%; height: 90px; font-size: 25px; line-height: 30px; padding: 8px 0;}
+    .bigger {font-size: 28px;}
     #moves-box, #time-box {font-size: 14px; padding-top: 5px;}
     .card {width: calc((100% - 20px) / 4); height: 70px; margin: 5px auto;}
     .park-name {display: none;}
